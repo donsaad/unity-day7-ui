@@ -1,31 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SubmitButton : MonoBehaviour
 {
-    PlayerData playerData = new PlayerData();
-    public void SetGender(string gender)
-    {
-        playerData.Gender = gender;
-    }
-    public void SetName(string name)
-    {
-        playerData.Name = name;
-    }
-    public void SetCountry(string country)
-    {
-        playerData.Country = country;
-    }
+
+    public TMPro.TMP_Dropdown DropdownMenu;
+    public TMPro.TMP_Text CountryRef;
     public void Submit()
     {
-        
+        CountryRef.text = DropdownMenu.options[DropdownMenu.value].text;
     }
-}
-
-class PlayerData
-{
-    public string Name { get; set; }
-    public string Gender { get; set; }
-    public string  Country { get; set; }
 }
